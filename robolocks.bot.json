@@ -1,0 +1,9 @@
+{
+  "name": "sample-skirmisher",
+  "version": "0.1.0",
+  "sdkVersion": "0.1",
+  "entry": "bot.py",
+  "unit": "unit.json",
+  "author": "robolocks",
+  "description": "A turret-tracking skirmisher that scans, keeps distance, avoids close obstacles, and fires when the solution is acceptable."
+}
