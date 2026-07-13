@@ -1,11 +1,13 @@
-# sample-skirmisher
+# robolocks-bot
 
 This is a minimal Robolocks bot repo you can push to GitHub and import from the Arena tab.
+It exports multiple bots from one `robolocks.bot.json`.
 
 ## Files
 
 - `robolocks.bot.json`: bot manifest loaded by Robolocks.
-- `bot.py`: Python bot entrypoint.
+- `bot.py`: `sample-skirmisher` Python bot entrypoint.
+- `bots/wall_runner.py`: `wall-runner` Python bot entrypoint.
 - `unit.json`: unit selection. This sample uses the built-in `standard_tank` preset.
 
 ## GitHub Import
@@ -27,9 +29,11 @@ https://raw.githubusercontent.com/owner/repo/ref/bot.py
 https://raw.githubusercontent.com/owner/repo/ref/unit.json
 ```
 
-## Behavior
+## Bots
 
-The bot:
+### sample-skirmisher
+
+The skirmisher:
 
 - scans with a wide turret-mounted arc,
 - aims the turret at the closest live enemy,
@@ -39,6 +43,19 @@ The bot:
 - pushes its movement target away from nearby sensed obstacles.
 
 It intentionally avoids `FaceArmorToward` while moving because `MoveTo` already steers the hull.
+
+### wall-runner
+
+The wall runner:
+
+- probes east until movement stalls and treats that as the first wall,
+- keeps the learned wall on its right side,
+- turns corners after repeated stalls,
+- avoids sensed obstacles by pushing the movement target away from nearby cover,
+- still scans, aims, and fires while driving.
+
+This is a behavior experiment for wall-following without direct field-boundary
+data in the current bot SDK.
 
 ## Unit Config
 
