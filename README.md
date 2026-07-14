@@ -1,6 +1,6 @@
 # robolocks-bot
 
-This is a minimal Robolocks bot repo you can push to GitHub and import from the Arena tab.
+This is a minimal [Robolocks](https://github.com/sangwonl/robolocks) bot repo you can push to GitHub and import from the Arena tab.
 It exports multiple bots from one `robolocks.bot.json`.
 
 ## Files
